@@ -1,23 +1,26 @@
-import React from 'react';
+import React, { Component } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Nav from "./components/layout/Nav";
+import Dashboard from "./components/dashboard/Dashboard";
+import SignUp from "./components/auth/SignUp";
+import SignIn from "./components/auth/SignIn";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    render() {
+        return (
+            <BrowserRouter>
+                <div>
+                    <Nav />
+                    <Switch>
+                        <Route exact path="/" component={Dashboard}/>
+                        <Route path="/sign-up" component={SignUp}/>
+                        <Route path="/sign-in" component={SignIn}/>
+                    </Switch>
+                    <p>Edit <code>src/App.js</code> and save to reload.</p>
+                </div>
+            </BrowserRouter>
+        )
+    }
 }
 
 export default App;
