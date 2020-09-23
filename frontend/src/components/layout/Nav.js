@@ -7,7 +7,7 @@ const Nav = () => {
             <Link className="nav-logo" to="/"><img src={"/img/logo.png"} alt="logo"/></Link>
             <nav>
                 <ul className="nav-links">
-                    <li><Link to="/">Dashboard</Link></li>
+                    <li><Link to="/dashboard">Dashboard</Link></li>
                     <li><Link to="/contacts">Kontakty</Link></li>
                     <li><Link to="/opportunities">Obchody</Link></li>
                     <li><Link to="/companies">Společnosti</Link></li>
