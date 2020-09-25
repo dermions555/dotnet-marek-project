@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Nav from "./components/layout/Nav";
 import Dashboard from "./components/dashboard/Dashboard";
 import SignIn from "./components/auth/SignIn";
+import PrivateRoute from "./components/route/PrivateRoute";
 
 class App extends Component {
     render() {
@@ -12,6 +13,7 @@ class App extends Component {
                     <div>
                         <Nav/>
                         <Switch>
+                            <PrivateRoute path="/sign-in" component={Dashboard}/>
                             <Route path="/dashboard" component={Dashboard}/>
                         </Switch>
                         <p>Edit <code>src/App.js</code> and save to reload.</p>
