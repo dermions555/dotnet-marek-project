@@ -14,8 +14,13 @@ class App extends Component {
                 <div>
                     <Nav/>
                     <Switch>
-                        <PrivateRoute exact-path="/" component={Home}/>
+                        <PrivateRoute exact path="/" component={Home}/>
                         <PrivateRoute path="/dashboard" component={Dashboard}/>
+                        <PrivateRoute path="/contacts" component={Dashboard}/>
+                        <PrivateRoute path="/opportunities" component={Dashboard}/>
+                        <PrivateRoute path="/companies" component={Dashboard}/>
+                        <PrivateRoute path="/tasks" component={Dashboard}/>
+                        <PrivateRoute path="/users" component={Dashboard}/>
                         <Route path="/sign-up" component={SignUp}/>
                         <Route path="/sign-in" component={SignIn}/>
                     </Switch>
