@@ -2,29 +2,27 @@ import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Nav from "./components/layout/Nav";
 import Dashboard from "./components/dashboard/Dashboard";
+import Home from "./components/pages/Home";
 import SignIn from "./components/auth/SignIn";
+import SignUp from "./components/auth/SignUp";
 import PrivateRoute from "./components/route/PrivateRoute";
 
 class App extends Component {
     render() {
-        if(1 === 1) { // TODO: This is just temporary before we implement authentication
-            return (
-                <BrowserRouter>
-                    <div>
-                        <Nav/>
-                        <Switch>
-                            <PrivateRoute path="/sign-in" component={Dashboard}/>
-                            <Route path="/dashboard" component={Dashboard}/>
-                        </Switch>
-                        <p>Edit <code>src/App.js</code> and save to reload.</p>
-                    </div>
-                </BrowserRouter>
-            )
-        } else { // TODO: Here goes login page user is redirected to when not authenticated
-            return (
-                <SignIn/>
-            )
-        }
+        return (
+            <BrowserRouter>
+                <div>
+                    <Nav/>
+                    <Switch>
+                        <PrivateRoute exact-path="/" component={Home}/>
+                        <PrivateRoute path="/dashboard" component={Dashboard}/>
+                        <Route path="/sign-up" component={SignUp}/>
+                        <Route path="/sign-in" component={SignIn}/>
+                    </Switch>
+                    <p>Edit <code>src/App.js</code> and save to reload.</p>
+                </div>
+            </BrowserRouter>
+        )
     }
 }
 
